@@ -26,32 +26,36 @@ public class Assignment1 {
    * Checks to see if given string has duplicate chars. Capitalization matters so
    * 'a' and 'A' are counted as two separate chars!
    *
-   * For my implementation, I make use of a double for loop. The outer loop works
-   * by extracting one char at a time from the given String to check for duplicates.
-   * The inner loop iterates through every char after the extracted one to see if
-   * any duplicates of it exist. If there happens to be one, we immediately return
-   * false thus dropping out of the function. If no duplicates were found, we fall back
-   * to the outer loop and try the next char in the String. If absolutely no duplicates
-   * exist, we return true.
+   * For my implementation, I decided to first sort the given String then check
+   * if any chars are repeated. I do this by first breaking the given String s into
+   * a char array with the String class method toCharArray(). I store a reference to the
+   * resulting char array in the variable sorted. I then pass sorted into the method insertionSort()
+   * that, as per the name, sorts our char array. I can now assume that any repeating characters
+   * will be immediately next to each other so I simply loop through the char array checking
+   * if the previous value is the same. If so, then the given String does not have all unique chars
+   * so we return false. If absolutely so duplicates were found though, we return true for this
+   * given String does indeed have all unique characters.
    *
    * @param s The string to check for duplicates
    * @return boolean True if given string has no duplicate chars, otherwise false
    */
   private static boolean isUniqueChar(String s) {
-  	// outer loop extracts the char we wish to check for duplicates
-  	for (int j = 0; j < s.length(); j++) {
-  		char c = s.charAt(j);
-  		// inner loop checks if a duplicate of the extracted char exists
-  		for (int k = j+1; k < s.length(); k++) {
-  			// upon finding a duplicate, return false
-  			if (c == s.charAt(k)) {
-  				return false;
-  			}
-  		}
-  	}
+    // Convert the given String into a char array
+    char[] sorted = s.toCharArray();
 
-  	// no duplicates found, return true
-  	return true;
+    // sort the resulting char array with the insertionSort() method
+    insertionSort(sorted);
+
+    // loop through the sorted array checking to see if any characters are repeated
+    for (int j = 1; j < sorted.length; j++) {
+      // if the current char is the same as the previous, we know the given string
+      // is not unique so immediately return false
+      if (sorted[j-1] == sorted[j]) {
+        return false;
+      }
+    }
+    // no duplicate chars were found! Return true
+    return true;
   }
 
   /**
