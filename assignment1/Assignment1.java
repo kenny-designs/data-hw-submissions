@@ -40,7 +40,7 @@ public class Assignment1 {
    * @return boolean True if given string has no duplicate chars, otherwise false
    */
   private static boolean isUniqueChar(String s) {
-    // Convert the given String into a char array
+    // convert the given String into a char array
     char[] sorted = s.toCharArray();
 
     // sort the resulting char array with the insertionSort() method
@@ -65,7 +65,7 @@ public class Assignment1 {
    * @return String The sorted word
    */
   private static String sortWord(String s) {
-    // Convert the string to lowercase then break it into a char array
+    // convert the string to lowercase then break it into a char array
   	char[] c = s.toLowerCase().toCharArray();
 
     // sort c
@@ -102,9 +102,8 @@ public class Assignment1 {
   	while (scanner.hasNextLine()) {
   		String s = scanner.nextLine();
       // report whether or not s has all unique chars then show the sorted version of s
-  		System.out.println("\n" + isUniqueChar(s) + "\n" + sortWord(s));
+      System.out.println("\n" + isUniqueChar(s) + "\n" + sortWord(s));
   	}
-
   	scanner.close();
   }
 }
