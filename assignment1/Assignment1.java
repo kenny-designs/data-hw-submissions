@@ -16,12 +16,17 @@
 ******************************************************************************/
 import java.util.Scanner;
 
+/**
+ * Author: Alexander M. Aguilar
+ * Class: CISC 3130
+ * Section: MY9
+ */
 public class Assignment1 {
   /**
    * Checks to see if given string has duplicate chars. Capitalization matters so
    * 'a' and 'A' are counted as two separate chars!
    *
-   * For my implementation, I make use of double for loops. The outer loop works
+   * For my implementation, I make use of a double for loop. The outer loop works
    * by extracting one char at a time from the given String to check for duplicates.
    * The inner loop iterates through every char after the extracted one to see if
    * any duplicates of it exist. If there happens to be one, we immediately return
