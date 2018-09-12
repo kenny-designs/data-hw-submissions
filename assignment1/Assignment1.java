@@ -32,9 +32,9 @@ public class Assignment1 {
    * resulting char array in the variable sorted. I then pass sorted into the method insertionSort()
    * that, as per the name, sorts our char array. I can now assume that any repeating characters
    * will be immediately next to each other so I simply loop through the char array checking
-   * if the previous value is the same. If so, then the given String does not have all unique chars
-   * so we return false. If absolutely so duplicates were found though, we return true for this
-   * given String does indeed have all unique characters.
+   * if the previous value is the same as the current one. If so, then the given String clearly
+   * does not have all unique chars so we return false. If absolutely no duplicates were found
+   * though, we return true for this given String does indeed have all unique characters.
    *
    * @param s The string to check for duplicates
    * @return boolean True if given string has no duplicate chars, otherwise false
