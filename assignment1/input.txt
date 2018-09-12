@@ -1,0 +1,13 @@
+hello
+world
+abcdefghii
+aAbBcCdD
+ASCII
+linus
+a
+aa
+Aa
+aba
+bab
+123^&@
+1
