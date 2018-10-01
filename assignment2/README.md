@@ -1,19 +1,29 @@
 Running and compilation works as follows:
 
-// to compile the program as a whole
+To compile the program as a whole
+```
 javac Assignment2
+```
 
-// to run objective 1 with test input
+To run objective 1 with test input
+```
 java Assignment2 1 < obj1/input.txt
+```
 
-// to run objective 2 with test input
+To run objective 2 with test input
+```
 java Assignment2 2 < obj2/input.txt
+```
 
-// to run objective 3 with test input
+To run objective 3 with test input
+```
 java Assignment2 3 < obj3/input.txt
+```
 
-// to run objective 4 with test input
+To run objective 4 with test input
+```
 java Assignment2 4 < obj4/input.txt
+```
 
 To use your own input, replace the text following the '<' symbol with your own
 file.
@@ -31,14 +41,20 @@ Big Note on Objective3
 -------------------------------
 For Objective3, I read two lines at a time then see if they overlap such as the
 following:
+
+```
   1 2 3 10 15 20
     9 6 10 15 20 // shifted to the right to help show where they overlap
+```
 
 My program then creates two Linked Lists that connect the overlapping parts together
 like so:
-  [1]->[2]->[3]--+
-                 |->[10]->[15]->[20]
-       [9]->[6]--+
+
+```
+[1]->[2]->[3]--+
+               |->[10]->[15]->[20]
+     [9]->[6]--+
+```
 
 Each [ ] represents a node and the number inside the data held by said node. Now
 that the program has forced these two lines to intersect, I use my method
@@ -47,7 +63,10 @@ intersect at all then it returns null.
 
 The main reason I point this all out is that the example input/output on the website
 shows the following:
+
+```
   [1,3,5,7] and [2,4,5,6] —> the lists intersect at 5
+```
 
 I reason that it's impossible for the node holding the data value 5 to be where they
 intersect for this implies that a single Link can point to two separate nodes when
