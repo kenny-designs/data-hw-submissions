@@ -1,0 +1,98 @@
+$ javac Assignment2.java && java Assignment2 1 < obj1/input.txt
+Line 1
+-------
+Before removing duplicates: 1 1 3 4 5 1 10
+After removing duplicates:  1 3 4 5 10
+
+Line 2
+-------
+Before removing duplicates: 1 2 3 4 1 2 5 10
+After removing duplicates:  1 2 3 4 5 10
+
+Line 3
+-------
+Before removing duplicates: 1 43 4 1
+After removing duplicates:  1 43 4
+
+Line 4
+-------
+Before removing duplicates: 1 2 10
+After removing duplicates:  1 2 10
+
+Line 5
+-------
+Before removing duplicates: 1 2 9 12 6
+After removing duplicates:  1 2 9 12 6
+
+Line 6
+-------
+Could not convert to long array due to: java.lang.NumberFormatException: For input string: "F"
+
+Line 7
+-------
+Could not convert to long array due to: java.lang.NumberFormatException: For input string: "1.2"
+
+Line 8
+-------
+Before removing duplicates: 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10 10
+After removing duplicates:  10
+
+Line 9
+-------
+Before removing duplicates: 99 1 2 3 4 5 6 7 8 9 10 9 8 7 6 5 4 3 2 1 2 3 4 5 6 7 8 9 10 9 8 7 6 5 4 3 2 1 99
+After removing duplicates:  99 1 2 3 4 5 6 7 8 9 10
+
+Line 10
+-------
+Before removing duplicates: 1 1 1 1 20 200 2000
+After removing duplicates:  1 20 200 2000
+
+Line 11
+-------
+Could not convert to long array due to: java.lang.NumberFormatException: For input string: ""
+
+Line 12
+-------
+Before removing duplicates: 1 13 4 10 11
+After removing duplicates:  1 13 4 10 11
+
+Line 13
+-------
+Could not convert to long array due to: java.lang.NumberFormatException: For input string: "r"
+
+Line 14
+-------
+Could not convert to long array due to: java.lang.NumberFormatException: For input string: "this"
+
+Line 15
+-------
+Could not convert to long array due to: java.lang.NumberFormatException: For input string: ""
+
+Line 16
+-------
+Before removing duplicates: 13 45 10001 -1111 40404
+After removing duplicates:  13 45 10001 -1111 40404
+
+Line 17
+-------
+Could not convert to long array due to: java.lang.NumberFormatException: For input string: "4.9"
+
+Line 18
+-------
+Before removing duplicates: 45 606060 28 383838
+After removing duplicates:  45 606060 28 383838
+
+Line 19
+-------
+Before removing duplicates: 12 3434 2 1
+After removing duplicates:  12 3434 2 1
+
+Line 20
+-------
+Could not convert to long array due to: java.lang.NumberFormatException: For input string: "5F"
+
+Line 21
+-------
+Could not convert to long array due to: java.lang.NumberFormatException: For input string: "f5"
+
+Objective1 complete!

@@ -1,0 +1,110 @@
+$ javac Assignment2.java && java Assignment2 4 < obj4/input.txt
+Line 1
+-------
+List (first-->last): h e l l o   w o r l d
+List (last-->first): d l r o w   o l l e h
+As you can see, the previous list is NOT a palindrome.
+
+Line 2
+-------
+List (first-->last): r a c e c a r
+List (last-->first): r a c e c a r
+As you can see, the previous list is a palindrome.
+
+Line 3
+-------
+List (first-->last): a n n a
+List (last-->first): a n n a
+As you can see, the previous list is a palindrome.
+
+Line 4
+-------
+List (first-->last): n o t   a   p a l i n d r o m e
+List (last-->first): e m o r d n i l a p   a   t o n
+As you can see, the previous list is NOT a palindrome.
+
+Line 5
+-------
+List (first-->last): l e v e l
+List (last-->first): l e v e l
+As you can see, the previous list is a palindrome.
+
+Line 6
+-------
+List (first-->last): ! @ # $ % $ # @ !
+List (last-->first): ! @ # $ % $ # @ !
+As you can see, the previous list is a palindrome.
+
+Line 7
+-------
+List (first-->last): ! ! ! ! !
+List (last-->first): ! ! ! ! !
+As you can see, the previous list is a palindrome.
+
+Line 8
+-------
+List (first-->last): 1 2 3 3 2 1
+List (last-->first): 1 2 3 3 2 1
+As you can see, the previous list is a palindrome.
+
+Line 9
+-------
+List (first-->last): + - + -
+List (last-->first): - + - +
+As you can see, the previous list is NOT a palindrome.
+
+Line 10
+-------
+List (first-->last): &
+List (last-->first): &
+As you can see, the previous list is a palindrome.
+
+Line 11
+-------
+List (first-->last): 9 9
+List (last-->first): 9 9
+As you can see, the previous list is a palindrome.
+
+Line 12
+-------
+List (first-->last):
+List (last-->first):
+As you can see, the previous list is a palindrome.
+
+Line 13
+-------
+List (first-->last): s   s   s   s
+List (last-->first): s   s   s   s
+As you can see, the previous list is a palindrome.
+
+Line 14
+-------
+List (first-->last):   s   s   s
+List (last-->first): s   s   s
+As you can see, the previous list is NOT a palindrome.
+
+Line 15
+-------
+List (first-->last): # s # s # s #
+List (last-->first): # s # s # s #
+As you can see, the previous list is a palindrome.
+
+Line 16
+-------
+List (first-->last): s # s # s
+List (last-->first): s # s # s
+As you can see, the previous list is a palindrome.
+
+Line 17
+-------
+List (first-->last): a s d f
+List (last-->first): f d s a
+As you can see, the previous list is NOT a palindrome.
+
+Line 18
+-------
+List (first-->last): a b c d e f g h i j k l m n o p q r s t u v w x y z z y x w v u t s r q p o n m l k j i h g f e d c b a
+List (last-->first): a b c d e f g h i j k l m n o p q r s t u v w x y z z y x w v u t s r q p o n m l k j i h g f e d c b a
+As you can see, the previous list is a palindrome.
+
+Objective4 complete!

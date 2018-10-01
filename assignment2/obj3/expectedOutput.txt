@@ -1,0 +1,85 @@
+$ javac Assignment2.java && java Assignment2 3 < obj3/input.txt
+Lines 1 and 2
+---------------
+1 2 5 10 15 9 0
+1 3 10 1 8 15 9 0
+Intersection found at node with value: 15
+
+Lines 3 and 4
+---------------
+1 2 3
+3 2 3
+Intersection found at node with value: 2
+
+Lines 5 and 6
+---------------
+10 20 30 40 50 60
+60
+Intersection found at node with value: 60
+
+Lines 7 and 8
+---------------
+1 2 3
+1 2 3
+Intersection found at node with value: 1
+
+Lines 9 and 10
+---------------
+1 4 6 7 8 9
+1 6 6 7 8 9
+Intersection found at node with value: 6
+
+Lines 11 and 12
+---------------
+1 2 3
+4 5 6
+No intersection found.
+
+Lines 13 and 14
+---------------
+12 3
+100 2 9 15 -79 8 9 0 0 12 3
+Intersection found at node with value: 12
+
+Lines 15 and 16
+---------------
+12 3
+100 2 9 15 -79 8 9 0 0 12
+No intersection found.
+
+Lines 17 and 18
+---------------
+3
+100 2 9 15 -79 8 9 0 0 12 3
+Intersection found at node with value: 3
+
+Lines 19 and 20
+---------------
+1 10 100 1000 10000
+1 10 100 1000 10000
+Intersection found at node with value: 1
+
+Lines 21 and 22
+---------------
+5 10 15 20 25 30
+1 2 3 4 5 6 7 8 9 10 15 20 25 30
+Intersection found at node with value: 10
+
+Lines 23 and 24
+---------------
+1 2 3 4 5 6 7 8 9 10 15 20 25 30
+5 10 15 20 25 30
+Intersection found at node with value: 10
+
+Lines 25 and 26
+---------------
+Could not convert to long array due to: java.lang.NumberFormatException: For input string: "asdf"
+Line 25 contains illegal long values!
+
+Lines 27 and 28
+---------------
+1 3 5 7
+2 4 5 6
+No intersection found.
+
+Objective3 complete!
