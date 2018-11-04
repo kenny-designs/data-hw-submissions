@@ -1,0 +1,94 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  font-family: 'Cormorant', serif;
+  color: white;
+}
+
+@keyframes panning {
+  0% {
+    background-position: 0 45%;
+  }
+
+  50% {
+    background-position: 100% 30%;
+  }
+
+  100% {
+    background-position: 0 45%;
+  }
+}
+
+#bg {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  background: black url("img/island-bg.jpg");
+  background-size: 130%;
+  background-repeat: no-repeat;
+  animation: panning 30s infinite linear;
+  z-index: -1;
+}
+
+#main-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+#album-text {
+  text-shadow: 2px 2px 3px black;
+}
+
+#title {
+  color: white !important;
+  text-decoration: none;
+}
+
+#title:hover {
+  color: #fca66f !important;
+}
+
+#album-text > h1 {
+  font-size: 3em;
+}
+
+#lyrics {
+  height: 35vh;
+  width: 35vw;
+  overflow: auto;
+  background-color: #00000029;
+}
+
+#cloud {
+  height: 40vw;
+  width: 40vw;
+  background-image: url("img/wordcloud.png");
+  background-size: cover;
+  box-shadow: 15px 15px 15px #0b0905;
+  transform: rotateY(20deg) rotateX(-6deg);
+}
+
+@media (orientation: portrait) {
+  #bg {
+    background-size: cover;
+  }
+
+  #main-container {
+    flex-direction: column;
+  }
+
+  #lyrics {
+    width: 70vw;
+    height: 30vh;
+  }
+
+  #cloud {
+    height: 65vw;
+    width: 65vw;
+    box-shadow: none;
+    transform: none;
+  }
+}
