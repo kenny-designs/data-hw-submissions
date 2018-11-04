@@ -1,4 +1,6 @@
 # Assignment 3
+[Assignment 3 Website](https://kenny-designs.github.io/data-hw-submissions/assignment3/word-cloud-site/)
+
 To compile the program, open the [cloud-producer](./cloud-producer/) directory on the command line and enter the following:
 
 ```
@@ -15,7 +17,3 @@ It may take a moment for the word cloud to finish but when it does the final ren
 named wordcloud.png similar to the following image.
 
 ![wordcloud](./cloud-producer/output/wordcloud.png)
-
-So see the live website with the rendered image, click the following link!
-
-[Assignment 3 Website](https://kenny-designs.github.io/data-hw-submissions/assignment3/word-cloud-site/)
