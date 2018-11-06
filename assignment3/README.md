@@ -13,7 +13,23 @@ After successfully running the previous command, enter the following to run the 
 mvn exec:java
 ```
 
+If you want to supply your own files, enter the following:
+
+```
+mvn exec:java -Dexec.args="./input/lyrics.txt ./input/windmill.png"
+```
+
+If you want to filter certain characters from each word, enter a regular expression are the third parameter like so:
+```
+mvn exec:java -Dexec.args="./input/lyrics.txt ./input/windmill.png [(),.!?]"
+```
+
+The regular expression [(),.!?] removes any of the characters within the [] from all words we encounter.
+
 It may take a moment for the word cloud to finish but when it does the final rendered image will appear in the output folder
-named wordcloud.png similar to the following image.
+named wordcloud.png. You'll also find another file called output.txt that has all the 'frequency: word' pairs that were found
+sorted from greatest to smallest.
+
+You can find the output.txt file [here](./cloud-producer/output/output.txt)
 
 ![wordcloud](./cloud-producer/output/wordcloud.png)
