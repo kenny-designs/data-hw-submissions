@@ -24,6 +24,24 @@
       <artifactId>kumo-core</artifactId>
       <version>1.17</version>
     </dependency>
+
+    <dependency>
+      <groupId>commons-io</groupId>
+      <artifactId>commons-io</artifactId>
+      <version>2.6</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>1.7.5</version>
+    </dependency>
+
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-simple</artifactId>
+      <version>1.6.4</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -41,6 +59,11 @@
         </executions>
         <configuration>
           <mainClass>com.kennydesigns.app.App</mainClass>
+          <arguments>
+                <argument>./input/lyrics.txt</argument>
+                <argument>./input/windmill.png</argument>
+                <argument>[(),.!?]</argument>
+            </arguments>
         </configuration>
       </plugin>
     </plugins>
