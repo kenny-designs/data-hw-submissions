@@ -67,14 +67,17 @@ html {
   width: 40vw;
   background-image: url("img/wordcloud.png");
   background-size: cover;
-  box-shadow: 15px 15px 15px #0b0905;
-  -webkit-box-shadow: 15px 15px 15px #0b0905;
-  transform: rotateY(20deg) rotateX(-6deg);
-  -ms-transform: rotateY(20deg) rotateX(-6deg);
-  -webkit-transform: rotateY(20deg) rotateX(-6deg);
+  /* Disabled due to complications with mobile devices */
+  /*box-shadow: 15px 15px 15px #0b0905;*/
+  /*transform: rotateY(20deg) rotateX(-6deg);*/
 }
 
 @media (orientation: portrait) {
+  body,
+  html {
+    height: auto;
+  }
+
   #bg {
     background-size: cover;
   }
@@ -89,11 +92,9 @@ html {
   }
 
   #cloud {
-    height: 65vw;
-    width: 65vw;
+    height: 75vw;
+    width: 75vw;
     box-shadow: none;
     transform: none;
-    -ms-transform: none;
-    -webkit-transform: none;
   }
 }
