@@ -71,6 +71,7 @@ html {
   transform: rotateY(20deg) rotateX(-6deg);
   -ms-transform: rotateY(20deg) rotateX(-6deg);
   -webkit-transform: rotateY(20deg) rotateX(-6deg);
+  transform-style: preserve-3d;
 }
 
 @media (orientation: portrait) {
