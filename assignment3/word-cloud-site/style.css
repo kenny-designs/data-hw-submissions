@@ -68,10 +68,10 @@ html {
   background-image: url("img/wordcloud.png");
   background-size: cover;
   box-shadow: 15px 15px 15px #0b0905;
+  -webkit-box-shadow: 15px 15px 15px #0b0905;
   transform: rotateY(20deg) rotateX(-6deg);
   -ms-transform: rotateY(20deg) rotateX(-6deg);
   -webkit-transform: rotateY(20deg) rotateX(-6deg);
-  transform-style: preserve-3d;
 }
 
 @media (orientation: portrait) {
