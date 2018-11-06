@@ -57,9 +57,8 @@ html {
 
 #lyrics {
   height: 35vh;
-  width: 35vw;
-  overflow: auto;
-  background-color: #00000029;
+  width: 50vw;
+  font-size: 1.1em;
 }
 
 #cloud {
@@ -89,12 +88,11 @@ html {
   #lyrics {
     width: 70vw;
     height: 30vh;
+    font-size: 1em;
   }
 
   #cloud {
     height: 75vw;
     width: 75vw;
-    box-shadow: none;
-    transform: none;
   }
 }
