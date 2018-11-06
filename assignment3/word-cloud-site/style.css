@@ -69,6 +69,8 @@ html {
   background-size: cover;
   box-shadow: 15px 15px 15px #0b0905;
   transform: rotateY(20deg) rotateX(-6deg);
+  -ms-transform: rotateY(20deg) rotateX(-6deg);
+  -webkit-transform: rotateY(20deg) rotateX(-6deg);
 }
 
 @media (orientation: portrait) {
@@ -90,5 +92,7 @@ html {
     width: 65vw;
     box-shadow: none;
     transform: none;
+    -ms-transform: none;
+    -webkit-transform: none;
   }
 }
