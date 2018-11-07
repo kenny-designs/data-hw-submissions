@@ -17,10 +17,11 @@ import java.util.Collections;
 import java.util.Comparator;
 
 /**
- * Tracks the frequency at which words appear in a given file
+ * Tracks the frequency at which words appear in a given file and allows us to
+ * write the results to a text file
  */
 public class WordCounter {
-  // HashMap to check word frequency
+  // HashMap for tracking word frequency
   private HashMap<String, Integer> frequency = new HashMap<>();
 
   /**
@@ -37,7 +38,7 @@ public class WordCounter {
    * Constructs a new WordCounter based on given file and filter
    *
    * @param file The file we wish to find the frequency of
-   * @param filter Regular expression used to filter each word of unwanted characters
+   * @param filter Regular expression used to purge each word of unwanted characters
    */
   public WordCounter (String file, String filter) {
     // populate HashMap frequency based on given file and filter
@@ -59,7 +60,7 @@ public class WordCounter {
 
   /**
    * Reads in the text from the given file and produces a HashMap based on how
-   * frequent each word is
+   * frequently each word appears
    *
    * @param file The file we wish to find the frequency of
    * @param filter Regular expression with characters we want removed from all words
@@ -90,7 +91,7 @@ public class WordCounter {
    * Sorts the entries in the HashMap from greatest to smallest and writes them
    * all to a .txt file
    *
-   * @param outputFile The filer we wish to write our result out to
+   * @param outputFile The file we wish to write our results out to
    */
   public void exportWords(String outputFile) {
     // create a list of keys
@@ -103,17 +104,17 @@ public class WordCounter {
 
     // sorts the keyList from highest to lowest based on the value associated with each key
     Collections.sort(keyList, new Comparator<String>() {
-      // Sort from hightest to lowest
+      // sorts from highest to lowest
       public int compare(String s1, String s2) {
         return frequency.get(s2) - frequency.get(s1);
       }
     });
 
     try {
-      // create FileWriter to create a txt file filled with word/frequency pairs
+      // FileWriter used to create a txt file filled with word/frequency pairs
       FileWriter fw = new FileWriter(new File(outputFile));
 
-      // iterate over the sorted list writing each one out to out outputFile
+      // iterate over the sorted list writing each one out to the outputFile
       for (String key : keyList) {
         // write to outputFile in the style of 'frequency: word'
         fw.write(frequency.get(key) + ": " + key + "\n");

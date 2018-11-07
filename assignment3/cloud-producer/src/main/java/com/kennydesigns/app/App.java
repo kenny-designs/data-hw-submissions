@@ -1,3 +1,9 @@
+/******************************************************************************
+ * Author: Alexander M. Aguilar
+ * Class: CISC 3130
+ * Section: MY9
+ ******************************************************************************/
+
 package com.kennydesigns.app;
 
 // Used for finding the frequency of words from a given file
@@ -40,7 +46,7 @@ public class App {
     }
 
     // retrieve location of the lyrics file, the image file, and optional regular expression from the user
-    // filter defaults to an empty String
+    // filter defaults to an empty String if no regular expression was supplied
     String lyrics =   args[0],
            inputImg = args[1],
            filter =   args.length == 3 ? args[2] : "";
@@ -62,11 +68,13 @@ public class App {
       final Dimension dimension = new Dimension(1000, 1000);
       final WordCloud wordCloud = new WordCloud(dimension, CollisionMode.PIXEL_PERFECT);
 
-      // with the word cloud created, set some basic properties
+      // with the wordcloud created, set some basic properties
       wordCloud.setPadding(2);
       wordCloud.setBackground(new PixelBoundryBackground(inputImg));
       wordCloud.setColorPalette(new ColorPalette(new Color(0x934334), new Color(0x2F472D), new Color(0x75B84F), new Color(0xFFFFFF)));
       wordCloud.setFontScalar(new LinearFontScalar(20, 60));
+
+      // build our wordcloud based on the frequency our words appeared
       wordCloud.build(wordFrequencies);
 
       // write the final cloud to the OUTPUT_IMG file
@@ -74,7 +82,7 @@ public class App {
       System.out.println("Success!");
     }
     catch (IOException e) {
-      // something went wrong, report to user
+      // could not build the wordcloud, report to user
       e.printStackTrace();
       System.out.println("Failed to create wordcloud.");
     }
