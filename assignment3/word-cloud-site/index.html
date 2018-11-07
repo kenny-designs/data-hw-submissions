@@ -20,6 +20,121 @@
 
 <body>
 
+  <div id="about-overlay">
+    <div id="about-text">
+      <h1>Why the Gorillaz?</h1>
+      <hr>
+      <p>
+        Ever since I was a little kid of 6 to 7 years old, I've been listening to
+        the Gorillaz. They are by far one of my favorite bands due to their unique
+        musical style, art, animation, and the fact that the band members are
+        literally just cartoon characters. I never could relate much to real people
+        as a kid but these characters I always thought were really cool and their
+        presence made the band just that much more awesome to me.
+      </p>
+
+      <h1>Why Feel Good Inc.?</h1>
+      <hr>
+      <p>
+        Feel Good Inc. is perhaps one of, if not the, most popular songs by Gorillaz
+        found on their Demon Days album. I know for sure that it's one of my favorite
+        songs by them especially the part where the lead singer, 2D, starts to sing,
+        "Windmill, windmill for the land." That very windmill he's referencing you
+        can see floating in the background of this site!
+        <br><br>
+        I will admit though, I haven't really ever thought about what the song is
+        about. I hope to find that out one day but for now I'll just keep enjoying
+        it cause it sounds great.
+      </p>
+
+      <h1>Top 5 Words</h1>
+      <hr>
+
+      <table id="top-five-table">
+        <tr>
+          <th>Word</th>
+          <th>Count</th>
+        </tr>
+        <tr>
+          <td>sha</td>
+          <td>48</td>
+        </tr>
+        <tr>
+          <td>ba</td>
+          <td>32</td>
+        </tr>
+        <tr>
+          <td>da</td>
+          <td>32</td>
+        </tr>
+        <tr>
+          <td>feel</td>
+          <td>15</td>
+        </tr>
+        <tr>
+          <td>good</td>
+          <td>15</td>
+        </tr>
+      </table>
+
+      <p>
+        I'm definitely not surprised that the words "feel" and "good" were in the
+        top five words used in a song called "Feel Good Inc." However, I had no
+        idea that "sha", "ba", and "da" even counted as words in the lyrics!
+        I just thought the lead singer was just making weird noises but the more
+        you know.
+      </p>
+
+      <h1>Data Structures and Wordclouds</h1>
+      <hr>
+      <p>
+        As for the actual creation of the wordcloud, I decided to use a hashmap,
+        the Java library kumo, and maven.
+        <br><br>
+        Starting with the data structure, I knew upon beginning this project that
+        a hashmap was the best way to go. The reason is that hashmaps allow us to
+        create a series of key/value pairs that can be accessed and updated on O(1)
+        time so long as we know what the key is. This works great for we can simply
+        iterate over the lyrics of a song using each word as a key that instantly maps to
+        an Integer representing the number of times we've encountered it thus far.
+        <br><br>
+        My class WordCounter makes use of a hashmap just as described above. It
+        takes a file from the user and an optional regular expression then proceeds
+        to read through the given file one word at a time converting each word to lowercase
+        and filtering out any unwanted characters as dictated by the regular expression.
+        Each word in turn is passed into the method incrementCounter() that then takes
+        the word and either adds it to the hashmap called 'frequency' or, if it already
+        exists, updates its associated value by 1. By the end, we should have the
+        frequency of every word from the song inside our hashmap called frequency.
+        <br><br>
+        To create the actual cloud with kumo, I first use a helper function inside
+        WordCounter called exportWords() that creates an ArrayList called 'keyList'
+        that is then populated with every key from the hashmap frequency. From there,
+        we sort the keyList with the Collections.sort() method by passing in both the
+        keyList and a lambda expression that uses the frequency hashmap to look up
+        the word count of each key so that we can sort from highest to lowest. With
+        that done, we save the results to a file called 'output.txt' in the output directory
+        so that we can use it to generate the wordcloud with the kumo library using
+        the FrequencyFileLoader class.
+      </p>
+
+      <h1>Improvements</h1>
+      <hr>
+      <p>
+        If I had additional time, I would have attempted to recreate the quicksort
+        algorithm for sorting the keyList instead of just using the Collections class.
+        Not only that, I'd like to spend some more time making my wordcloud look even
+        better than it already does. I'd also like to try pushing my web development
+        skills with some new framework or library I've yet to try instead of just using pure
+        HTML, CSS, and JavaScript. I'd also like to spend some time tweaking the site
+        to work better with mobile devices.
+        <br><br>
+        All in all though, I feel rather good about the project and enjoyed making
+        it.
+      </p>
+    </div>
+  </div>
+
   <div id="bg"></div>
   <div id="main-container">
     <div id="album-text">
@@ -94,8 +209,15 @@
         Sha, sha ba da, sha ba da, Feel Good<br>
         Sha, sha ba da, sha ba da, Feel Good<br>
       </p>
+
+      <div id="btn-container">
+        <button id="about-btn">Click here to learn more!</button>
+      </div>
     </div>
-    <div id="cloud"></div>
+
+    <div id="cloud-container">
+      <div id="cloud"></div>
+    </div>
   </div>
 
   <!-- Add custom scrollbar functionality -->

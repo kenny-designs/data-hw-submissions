@@ -6,6 +6,37 @@ html {
   color: white;
 }
 
+#about-overlay {
+  position: absolute;
+  display: none;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 2;
+  cursor: pointer;
+}
+
+#about-text {
+  font-size: 1.1em;
+  margin: 1em;
+}
+
+#top-five-table {
+  margin: auto;
+  text-align: center;
+  border-collapse: collapse;
+}
+
+#top-five-table tr,
+td {
+  font-size: 1.2em;
+  padding: 1.8em;
+  border: 1px solid white;
+}
+
 @keyframes panning {
   0% {
     background-position: 0 45%;
@@ -59,6 +90,15 @@ html {
   height: 35vh;
   width: 50vw;
   font-size: 1.1em;
+  margin: 0;
+}
+
+#btn-container {
+  text-align: center;
+}
+
+#cloud-container {
+  margin-bottom: 2em;
 }
 
 #cloud {
@@ -66,9 +106,23 @@ html {
   width: 40vw;
   background-image: url("img/wordcloud.png");
   background-size: cover;
-  /* Disabled due to complications with mobile devices */
-  /*box-shadow: 15px 15px 15px #0b0905;*/
-  /*transform: rotateY(20deg) rotateX(-6deg);*/
+}
+
+#about-btn {
+  background-color: white;
+  border: none;
+  cursor: pointer;
+  margin: 3em 0;
+  padding: 0.9em;
+  font-size: 1em;
+  font-weight: 600;
+  border-radius: 0.5em;
+
+  /* allow style to work cross browser */
+  text-decoration: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 @media (orientation: portrait) {
