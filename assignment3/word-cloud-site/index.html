@@ -11,7 +11,6 @@
   <link href="https://fonts.googleapis.com/css?family=Cormorant" rel="stylesheet">
 
   <!-- Custom Scrollbar -->
-
   <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
 
   <!-- Import own stylesheet -->
@@ -21,9 +20,11 @@
 <body>
 
   <div id="about-overlay">
+    <div id="translucent-bg"></div>
     <div id="about-text">
       <h1>Why the Gorillaz?</h1>
       <hr>
+
       <p>
         Ever since I was a little kid of 6 to 7 years old, I've been listening to
         the Gorillaz. They are by far one of my favorite bands due to their unique
@@ -32,6 +33,14 @@
         as a kid but these characters I always thought were really cool and their
         presence made the band just that much more awesome to me.
       </p>
+
+      <div class="example-img">
+        <img src="./img/band.jpg">
+        <p>
+          From top to bottom, left to right:<br>
+          Murdoc, Russel, 2D, and Noodle From the Gorillaz
+        </p>
+      </div>
 
       <h1>Why Feel Good Inc.?</h1>
       <hr>
@@ -42,80 +51,118 @@
         "Windmill, windmill for the land." That very windmill he's referencing you
         can see floating in the background of this site!
         <br><br>
-        I will admit though, I haven't really ever thought about what the song is
-        about. I hope to find that out one day but for now I'll just keep enjoying
-        it cause it sounds great.
+        I will admit though, I don't really know just what the song is about.
+        I hope to find that out one day but for now I'll just keep enjoying enjoying
+        it for what it is. Good music. Well, in my opinion anyways...
       </p>
+
+      <iframe id="yt-video" width="560" height="315" src="https://www.youtube.com/embed/HyHNuVaZJ-k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
       <h1>Top 5 Words</h1>
       <hr>
 
-      <table id="top-five-table">
-        <tr>
-          <th>Word</th>
-          <th>Count</th>
-        </tr>
-        <tr>
-          <td>sha</td>
-          <td>48</td>
-        </tr>
-        <tr>
-          <td>ba</td>
-          <td>32</td>
-        </tr>
-        <tr>
-          <td>da</td>
-          <td>32</td>
-        </tr>
-        <tr>
-          <td>feel</td>
-          <td>15</td>
-        </tr>
-        <tr>
-          <td>good</td>
-          <td>15</td>
-        </tr>
-      </table>
+      <div id="table-wrapper" class="simple-bar">
+        <table id="top-five-table">
+          <tr>
+            <th>Word</th>
+            <td>sha</td>
+            <td>ba</td>
+            <td>da</td>
+            <td>feel</td>
+            <td>good</td>
+          </tr>
+          <tr>
+            <th>Count</th>
+            <td>48</td>
+            <td>32</td>
+            <td>32</td>
+            <td>15</td>
+            <td>15</td>
+          </tr>
+        </table>
+      </div>
 
       <p>
-        I'm definitely not surprised that the words "feel" and "good" were in the
-        top five words used in a song called "Feel Good Inc." However, I had no
-        idea that "sha", "ba", and "da" even counted as words in the lyrics!
-        I just thought the lead singer was just making weird noises but the more
-        you know.
+        I'm definitely not surprised that the words <em>feel</em> and <em>good</em>
+        were in the top five words used in a song called Feel Good Inc.
+        However, I had no idea that <em>sha</em>, <em>ba</em>, and <em>da</em>
+        even counted as words in the lyrics! I just thought the lead singer was
+        just making weird noises but it appears as though that wasn't the case...
       </p>
 
       <h1>Data Structures and Wordclouds</h1>
       <hr>
+      <h3 class="underline-title">HashMaps</h3>
       <p>
-        As for the actual creation of the wordcloud, I decided to use a hashmap,
-        the Java library kumo, and maven.
+        I knew upon beginning this project that a HashMap was the best way to go.
+        The reason is that HashMaps allow us to create a series of key/value pairs
+        that can be accessed and updated on O(1) time so long as we know what the key
+        is. This works great for we can simply iterate over the lyrics of a song using
+        each word as a key that instantly maps to an Integer representing the number
+        of times we've encountered it thus far. Had we used something like a List
+        to track all our words and their frequencies we'd have to constantly iterate
+        through it to find the right words to update along with having to manually
+        handle adding in new ones if we've never seen them before! Java's HashMap
+        class on the other hand allows us to quickly and easily update or add new
+        words to the HashMap with its method put() by simply passing in the word
+        as a key and what the new value should be. As such, I went with the HashMap
+        due to its ease of use, amazing speed, and the fact that words and frequencies
+        work well with the key/value philosophy that HashMaps work off of.
         <br><br>
-        Starting with the data structure, I knew upon beginning this project that
-        a hashmap was the best way to go. The reason is that hashmaps allow us to
-        create a series of key/value pairs that can be accessed and updated on O(1)
-        time so long as we know what the key is. This works great for we can simply
-        iterate over the lyrics of a song using each word as a key that instantly maps to
-        an Integer representing the number of times we've encountered it thus far.
+        Regarding implementation, my class WordCounter makes use of a HashMap just
+        as described above. It takes a file from the user and an optional regular
+        expression then proceeds to read through the given file one word at a time
+        converting each word to lowercase and filtering out any unwanted characters
+        as dictated by the regular expression. Each word in turn is passed into the
+        method incrementCounter() that then takes the word and either adds it to the
+        HashMap called 'frequency' or, if it already exists, updates its associated
+        value by 1. By the end, we have the frequency of every word from the song
+        inside our HashMap all nicely bundled up and ready to use later in the
+        application for when we create the wordcloud itself.
+      </p>
+      <h3 class="underline-title">Kumo</h3>
+      <p>
+        To create the wordcloud, I decided to make use of Kumo. Personally,
+        I would rather try and create a wordcloud program from scratch but I don't
+        have the time to do that. Plus, I wanted to challenge myself by setting up
+        Maven and learning to include external dependencies. It took me an entire
+        day of trial and error but I'm happy to say that I found managed to get
+        Maven up and running along with Kumo.
         <br><br>
-        My class WordCounter makes use of a hashmap just as described above. It
-        takes a file from the user and an optional regular expression then proceeds
-        to read through the given file one word at a time converting each word to lowercase
-        and filtering out any unwanted characters as dictated by the regular expression.
-        Each word in turn is passed into the method incrementCounter() that then takes
-        the word and either adds it to the hashmap called 'frequency' or, if it already
-        exists, updates its associated value by 1. By the end, we should have the
-        frequency of every word from the song inside our hashmap called frequency.
+        In order to make use of Kumo, I needed to find a way to supply it with
+        all the lyrics and their frequencies from my chosen song. To do this,
+        I first use a helper function inside my WordCounter class called exportWords()
+        that creates an ArrayList called 'keyList' that is then populated with every key
+        from the frequency HashMap. From there, we sort the keyList with the Collections.sort()
+        method by passing in both the keyList and a lambda expression with the interface
+        Comparator that uses the frequency HashMap to look up the word frequency of each
+        key so that we can sort from highest to lowest. With that done, we write the
+        results to a file called 'output.txt' in the output directory that will be used
+        to build our wordcloud image.
         <br><br>
-        To create the actual cloud with kumo, I first use a helper function inside
-        WordCounter called exportWords() that creates an ArrayList called 'keyList'
-        that is then populated with every key from the hashmap frequency. From there,
-        we sort the keyList with the Collections.sort() method by passing in both the
-        keyList and a lambda expression that uses the frequency hashmap to look up
-        the word count of each key so that we can sort from highest to lowest. With
-        that done, we save the results to a file called 'output.txt' in the output directory
-        so that we can use it to generate the wordcloud with the kumo library using
-        the FrequencyFileLoader class.
+        Now that we have all the lyrics have been nicely sorted and formated in
+        such a way that Kumo can actually make use of them, we begin creating our
+        wordcloud. To do this, we first start with two Kumo classes called
+        FrequncyFileLoader and WordFrequency. We create a WordFrequency List by
+        invoking the load() method from FrequencyFileLoader and passing in our
+        output.txt with all the sorted lyrics as a File object. Next, we use the
+        Kumo class WordCloud to create a WordCloud object by passing in a Dimension
+        object with the size we want our final cloud to be and we pass in CollisionMode.PIXEL_PERFECT
+        to set the cloud's collision mode.
+        <br><br>
+        With our wordcloud created, we then configure some extra details such as
+        the cloud's padding, an image with transparency to define the shape, the
+        color palette, and the size of the font. For the image, I have a file in
+        the input directory called windmill.png that shapes the cloud into the
+        silhouette of the floating windmill you can see in the background of the
+        site. The color pallete is based off of the bands members from the Gorillaz.
+        <br><br>
+        Last but not least, we invoke the wordcloud's build() method by passing
+        in our WordFrequencies List from earlier. This allows us to finally create
+        the wordcloud we desire based on the settings we defined such as padding,
+        image, etc. With all this done and out of the way, we invoke the wordcloud's
+        writeToFile() method by passing in the name of our final image. Upon success,
+        We now have our final wordcloud saved in the output folder named wordcloud.png!
       </p>
 
       <h1>Improvements</h1>
@@ -123,14 +170,31 @@
       <p>
         If I had additional time, I would have attempted to recreate the quicksort
         algorithm for sorting the keyList instead of just using the Collections class.
-        Not only that, I'd like to spend some more time making my wordcloud look even
-        better than it already does. I'd also like to try pushing my web development
-        skills with some new framework or library I've yet to try instead of just using pure
-        HTML, CSS, and JavaScript. I'd also like to spend some time tweaking the site
-        to work better with mobile devices.
+        Not only that, I would have liked to attempt to create my own custom word
+        cloud software instead of just using Kumo. I also would have loved to try
+        and create this site with Node.js and the PaaS called Heroku.
         <br><br>
         All in all though, I feel rather good about the project and enjoyed making
-        it.
+        it. I probably spent too much time on the website portion but I was having
+        too much fun to stop.
+      </p>
+
+      <h1>Scaling</h1>
+      <hr>
+      <p>
+        To scale the project even futher, I would further explore Maven and all
+        that it offers. I noticed many features, such as the ability to run tests,
+        that I would really like to learn how to use so that I can make a better,
+        easier to maintain project.
+      </p>
+      <p>
+        For the web side of things, I would make use of Webpack to help me better
+        bundle and manage my project. Also, I made use of a JavaScript library called
+        simplebar that I made use of by using an external URL. This is bad for
+        who knows when that link could go down and I am unable to develop my site
+        without an internet connection. I'd fix this by making use of NPM to include
+        simplebar in my project and also Browserify since I'm deploying to GitHub
+        pages.
       </p>
     </div>
   </div>
@@ -138,9 +202,9 @@
   <div id="bg"></div>
   <div id="main-container">
     <div id="album-text">
-      <h1><a id="title" href="https://www.youtube.com/watch?v=HyHNuVaZJ-k">Feel Good Inc.</a></h1>
-      <h2>by the Gorillaz</h2>
-      <p id="lyrics">
+      <h1><a class="header-link" href="https://www.youtube.com/watch?v=HyHNuVaZJ-k">Feel Good Inc.</a></h1>
+      <h2>by the <a class="header-link" href="https://www.gorillaz.com/">Gorillaz</a></h2>
+      <p id="lyrics" class="simple-bar">
         Ha-ha-ha-ha-ha-ha-ha-ha-ha-ha-ha-ha-ha-ha-ha-ha-ha, Feel Good<br>
         Sha, sha ba da, sha ba da, Feel Good<br>
         Sha, sha ba da, sha ba da, Feel Good<br>
@@ -211,7 +275,7 @@
       </p>
 
       <div id="btn-container">
-        <button id="about-btn">Click here to learn more!</button>
+        <button id="about-btn">About the Project</button>
       </div>
     </div>
 

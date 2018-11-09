@@ -1,7 +1,13 @@
-// create custom scrollbar for lyrics with SimpleBar
-new SimpleBar(document.getElementById('lyrics'));
+// define simplebar settings
+const simpleConfig = {
+  autoHide: false,
+  scrollbarMinSize: 100
+};
 
-// toggle about-overlay when it is clicked
+// create custom scrollbar for all elements with simple-bar class
+Array.from(document.querySelectorAll('.simple-bar')).forEach(el => new SimpleBar(el, simpleConfig));
+
+// toggle about-overlay when it itself is clicked
 var aboutOverlay = document.getElementById('about-overlay');
 aboutOverlay.addEventListener('click', toggleOverlay);
 
@@ -9,10 +15,10 @@ aboutOverlay.addEventListener('click', toggleOverlay);
 var aboutBtn = document.getElementById('about-btn');
 aboutBtn.addEventListener('click', toggleOverlay);
 
-// toggles the display property of the about-overlay between none and table
+// toggles the display property of the about-overlay between none and block
 function toggleOverlay() {
   if (window.getComputedStyle(aboutOverlay, null).getPropertyValue('display') == 'none') {
-    aboutOverlay.style.display = 'table';
+    aboutOverlay.style.display = 'block';
   }
   else {
     aboutOverlay.style.display = 'none';

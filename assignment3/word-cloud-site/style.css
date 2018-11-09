@@ -6,6 +6,10 @@ html {
   color: white;
 }
 
+hr {
+  top: 0;
+}
+
 #about-overlay {
   position: absolute;
   display: none;
@@ -14,24 +18,61 @@ html {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.9);
   z-index: 2;
   cursor: pointer;
+}
+
+#translucent-bg {
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  height: 100%;
+  width: 100%;
 }
 
 #about-text {
   font-size: 1.1em;
   margin: 1em;
+  position: relative;
+}
+
+#about-text h1 {
+  margin-bottom: 0.1em;
+}
+
+#yt-video {
+  margin: 3em auto;
+  display: block;
+  width: 65vw;
+  height: 40vw;
+}
+
+.example-img p {
+  text-align: center;
+  font-style: italic;
+}
+
+.example-img img {
+  display: block;
+  margin: auto;
+}
+
+.underline-title {
+  text-decoration: underline;
+}
+
+#table-wrapper {
+  overflow-x: auto;
 }
 
 #top-five-table {
-  margin: auto;
+  margin: 3em auto;
   text-align: center;
   border-collapse: collapse;
 }
 
 #top-five-table tr,
-td {
+td,
+th {
   font-size: 1.2em;
   padding: 1.8em;
   border: 1px solid white;
@@ -69,16 +110,17 @@ td {
   height: 100%;
 }
 
-#album-text {
+#album-text h1,
+h2 {
   text-shadow: 2px 2px 3px black;
 }
 
-#title {
+.header-link {
   color: white !important;
   text-decoration: none;
 }
 
-#title:hover {
+.header-link:hover {
   color: #fca66f !important;
 }
 
@@ -91,6 +133,7 @@ td {
   width: 50vw;
   font-size: 1.1em;
   margin: 0;
+  padding-right: 1em;
 }
 
 #btn-container {
@@ -109,6 +152,7 @@ td {
 }
 
 #about-btn {
+  font-family: inherit;
   background-color: white;
   border: none;
   cursor: pointer;
@@ -117,12 +161,25 @@ td {
   font-size: 1em;
   font-weight: 600;
   border-radius: 0.5em;
+  text-decoration: none;
 
   /* allow style to work cross browser */
-  text-decoration: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+/*
+ * Override certain properties of imported SimpleBar CSS
+ */
+.simplebar-scrollbar::before {
+  background: white;
+  opacity: 1;
+}
+
+.simplebar-track .simplebar-scrollbar.visible::before {
+  /* When hovered, remove all transitions from drag handle */
+  opacity: inherit;
 }
 
 @media (orientation: portrait) {
@@ -148,5 +205,10 @@ td {
   #cloud {
     height: 75vw;
     width: 75vw;
+  }
+
+  #yt-video {
+    width: 80vw;
+    height: 50vw;
   }
 }
