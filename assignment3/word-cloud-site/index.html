@@ -95,7 +95,7 @@
 
       <h1>Data Structures and Wordclouds</h1>
       <hr>
-      <h3 class="underline-title">HashMaps</h3>
+      <h2 class="underline-title">HashMaps</h2>
       <p>
         I knew upon beginning this project that a HashMap was the best way to go.
         The reason is that HashMaps allow us to create a series of key/value pairs
@@ -123,14 +123,14 @@
         inside our HashMap all nicely bundled up and ready to use later in the
         application for when we create the wordcloud itself.
       </p>
-      <h3 class="underline-title">Kumo</h3>
+      <h2 class="underline-title">Kumo</h2>
       <p>
         To create the wordcloud, I decided to make use of Kumo. Personally,
         I would rather try and create a wordcloud program from scratch but I don't
         have the time to do that. Plus, I wanted to challenge myself by setting up
         Maven and learning to include external dependencies. It took me an entire
-        day of trial and error but I'm happy to say that I found managed to get
-        Maven up and running along with Kumo.
+        day of trial and error but I'm happy to say that I managed to get Maven
+        up and running along with Kumo.
         <br><br>
         In order to make use of Kumo, I needed to find a way to supply it with
         all the lyrics and their frequencies from my chosen song. To do this,
@@ -143,7 +143,7 @@
         results to a file called 'output.txt' in the output directory that will be used
         to build our wordcloud image.
         <br><br>
-        Now that we have all the lyrics have been nicely sorted and formated in
+        Now that we have all the lyrics nicely sorted and formatted in
         such a way that Kumo can actually make use of them, we begin creating our
         wordcloud. To do this, we first start with two Kumo classes called
         FrequncyFileLoader and WordFrequency. We create a WordFrequency List by
@@ -165,7 +165,7 @@
         the wordcloud we desire based on the settings we defined such as padding,
         image, etc. With all this done and out of the way, we invoke the wordcloud's
         writeToFile() method by passing in the name of our final image. Upon success,
-        We now have our final wordcloud saved in the output folder named wordcloud.png!
+        we now have our final wordcloud saved in the output folder named wordcloud.png!
       </p>
 
       <h1>Improvements</h1>
@@ -173,8 +173,8 @@
       <p>
         If I had additional time, I would have attempted to recreate the quicksort
         algorithm for sorting the keyList instead of just using the Collections class.
-        Not only that, I would have liked to attempt to create my own custom word
-        cloud software instead of just using Kumo. I also would have loved to try
+        Not only that, I would have liked to attempt to create my own custom
+        wordcloud software instead of just using Kumo. I also would have loved to try
         and create this site with Node.js and the PaaS called Heroku.
         <br><br>
         All in all though, I feel rather good about the project and enjoyed making
@@ -185,7 +185,7 @@
       <h1>Scaling</h1>
       <hr>
       <p>
-        To scale the project even futher, I would further explore Maven and all
+        To scale the project even futher, I would continue to explore Maven and all
         that it offers. I noticed many features, such as the ability to run tests,
         that I would really like to learn how to use so that I can make a better,
         easier to maintain project.
@@ -193,11 +193,11 @@
       <p>
         For the web side of things, I would make use of Webpack to help me better
         bundle and manage my project. Also, I made use of a JavaScript library called
-        simplebar that I made use of by using an external URL. This is bad for
-        who knows when that link could go down and I am unable to develop my site
-        without an internet connection. I'd fix this by making use of NPM to include
-        simplebar in my project and also Browserify since I'm deploying to GitHub
-        pages.
+        simplebar by using an external URL. This is bad for who knows when that link
+        could go down and I am unable to develop my site without an internet connection.
+        I'd fix this by making use of NPM to include simplebar in my project and
+        also Browserify since I'm deploying to GitHub pages and would like to use
+        the require() method to include simplebar in to my program.
       </p>
     </div>
   </div>
