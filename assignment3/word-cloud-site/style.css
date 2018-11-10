@@ -31,7 +31,7 @@ hr {
 
 #about-text {
   font-size: 1.1em;
-  margin: 1em;
+  margin: 0 20vw 3vw 20vw;
   position: relative;
 }
 
@@ -42,8 +42,8 @@ hr {
 #yt-video {
   margin: 3em auto;
   display: block;
-  width: 65vw;
-  height: 40vw;
+  width: 50vw;
+  height: 30vw;
 }
 
 .example-img p {
@@ -182,7 +182,8 @@ h2 {
   opacity: inherit;
 }
 
-@media (orientation: portrait) {
+/* breakpoint for medium devices */
+@media (max-width: 991.98px) {
   body,
   html {
     height: auto;
@@ -205,6 +206,10 @@ h2 {
   #cloud {
     height: 75vw;
     width: 75vw;
+  }
+
+  #about-text {
+    margin: 5vw;
   }
 
   #yt-video {

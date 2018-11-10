@@ -9,11 +9,11 @@ Array.from(document.querySelectorAll('.simple-bar')).forEach(el => new SimpleBar
 
 // toggle about-overlay when it itself is clicked
 var aboutOverlay = document.getElementById('about-overlay');
-aboutOverlay.addEventListener('click', toggleOverlay);
+aboutOverlay.addEventListener('mousedown', toggleOverlay);
 
 // toggle about-overlay when about-btn clicked
 var aboutBtn = document.getElementById('about-btn');
-aboutBtn.addEventListener('click', toggleOverlay);
+aboutBtn.addEventListener('mousedown', toggleOverlay);
 
 // toggles the display property of the about-overlay between none and block
 function toggleOverlay() {
