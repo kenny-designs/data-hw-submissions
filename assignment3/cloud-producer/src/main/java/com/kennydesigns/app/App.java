@@ -9,9 +9,15 @@ package com.kennydesigns.app;
 // Used for finding the frequency of words from a given file
 import com.kennydesigns.app.WordCounter;
 
-// Import needed classes for kumo to create the wordcloud
+// loading in external files
 import java.io.IOException;
 import java.io.File;
+
+// Used to find the dimensions of the supplied image
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+
+// Needed for kumo to create the wordcloud
 import java.util.List;
 import com.kennycason.kumo.nlp.FrequencyFileLoader;
 import com.kennycason.kumo.WordFrequency;
@@ -36,20 +42,18 @@ public class App {
    */
   public static void main(String[] args) {
     // exit program if user gave too many or too few args
-    if (args.length < 2) {
-      System.out.println("Too few arguments. Please supply path to lyrics and path to image");
-      System.exit(0);
-    }
-    else if (args.length > 3) {
-      System.out.println("Too many arguments. At most, supply a path to lyrics, path to an image, and a regular expression");
+    if (args.length < 2 || args.length > 3) {
+      System.out.printf("Too %s arguments. At most, supply a path to lyrics, a path " +
+                        "to an image, and an optional regular expression.\n",
+                        (args.length < 2) ? "few" : "many");
       System.exit(0);
     }
 
     // retrieve location of the lyrics file, the image file, and optional regular expression from the user
     // filter defaults to an empty String if no regular expression was supplied
-    String lyrics =   args[0],
+    String lyrics   = args[0],
            inputImg = args[1],
-           filter =   args.length == 3 ? args[2] : "";
+           filter   = args.length == 3 ? args[2] : "";
 
     // read in the lyrics and count the frequency with which they appear
     WordCounter wc = new WordCounter(lyrics, filter);
@@ -64,8 +68,9 @@ public class App {
       final FrequencyFileLoader frequencyFileLoader = new FrequencyFileLoader();
       final List<WordFrequency> wordFrequencies = frequencyFileLoader.load(new File(OUTPUT_TXT));
 
-      // create the dimensions of the new wordcloud and set its CollisionMode
-      final Dimension dimension = new Dimension(1000, 1000);
+      // create the dimensions of the new wordcloud based on the inputImg and set its CollisionMode
+      final BufferedImage img = ImageIO.read(new File(inputImg));
+      final Dimension dimension = new Dimension(img.getWidth(), img.getHeight());
       final WordCloud wordCloud = new WordCloud(dimension, CollisionMode.PIXEL_PERFECT);
 
       // with the wordcloud created, set some basic properties
